@@ -27,14 +27,6 @@ $D['yourip'] = $_SERVER['REMOTE_ADDR'];
 $D['uname'] = @php_uname();
 $D['os'] = explode(" ", php_uname());
 
-if (($str = @file("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")) !== false){
-    $D['cpu']['freq'] = $str[0];
-}
-else{
-    $D['cpu']['freq'] = 0;
-}
-
-
 if (($str = @file("/proc/cpuinfo")) !== false){
     $str = implode("", $str);
     @preg_match_all("/model\s+name\s{0,}\:+\s{0,}([\w\s\)\(\@.-]+)([\r\n]+)/s", $str, $model);
@@ -97,6 +89,12 @@ function get_info(){
         );
     }
 
+    if (($str = @file("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")) !== false){
+        $D['cpu']['freq'] = $str;
+    }
+    else{
+        $D['cpu']['freq'] = 0;
+    }
 
     if (($str = @file("/sys/class/thermal/thermal_zone0/temp")) !== false){
         $D['cpu']['temp'] = $str;

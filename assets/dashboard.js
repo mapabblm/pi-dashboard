@@ -279,6 +279,7 @@ $(document).ready(function() {
             $("#time").text(newDate.format('hh:mm:ss'));
             $("#date").text(newDate.format('yyyy-MM-dd'));
             $("#uptime").text(uptimeFormat(data.uptime));
+            $("#cpu-freq").text(Math.round(data.cpu.freq/1000));
             $("#cpu-temp").text(Math.round(data.cpu.temp/1000 * Math.pow(10,1))/Math.pow(10,1));
             $("#mem-percent").text(data.mem.percent);
             $("#mem-free").text(data.mem.free);

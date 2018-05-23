@@ -80,7 +80,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
                             <div class="row" style="margin: 0; background-color:#E0E0E0;">
                                 <div class="text-center" style="padding: 2px 0 2px 0; background-color: #CDFD9F;"><strong><small>CPU</small></strong></div>
                                 <div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0;">
-                                    <div class="text-center" style="padding: 10px 0 10px 0; background-color:#FFFECD;"><span id="cpu-freq" style="font-weight: bolder;"><?php echo($D['cpu']['freq']/1000) ?></span><br /><small class="label">MHz</small></div>
+                                    <div class="text-center" style="padding: 10px 0 10px 0; background-color:#FFFECD;"><span id="cpu-freq" style="font-weight: bolder;">0</span><br /><small class="label">MHz</small></div>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0;">
                                     <div class="text-center" style="padding: 10px 0 10px 0;"><span id="cpu-count"><?php echo($D['cpu']['count']) ?></span><br /><small class="label">CORE</small></div>
